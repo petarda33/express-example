@@ -21,7 +21,7 @@ const getRootHandler = (req, res) => {
 
 const getUserHandler = (req, res) => {
   console.log('params:', req.params);
-  res.status(400).send({'Dear ${res.loalc.user.username}! It was a bad request'});
+  res.status(400).send({'Dear ${res.local.user.username}! It was a bad request'});
 };
 
 const redirectExampleHandler = (req, res) => {
@@ -33,7 +33,7 @@ const createIssue = (req, res) => {
   res.sendStatus(201);
 }
 
-app.use(morgan(tiny));
+app.use(morgan('tiny'));
 app.use(express.json());
 app.use(loggerMidlleware);
 app.use(authenticationMidlleware);
